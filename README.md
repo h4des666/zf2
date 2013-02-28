@@ -1,59 +1,52 @@
-### Welcome to the *Zend Framework 2.1* Release!
+ZendSkeletonApplication
+=======================
 
-Master: [![Build Status](https://secure.travis-ci.org/zendframework/zf2.png?branch=master)](http://travis-ci.org/zendframework/zf2)
-Develop: [![Build Status](https://secure.travis-ci.org/zendframework/zf2.png?branch=develop)](http://travis-ci.org/zendframework/zf2)
+Introduction
+------------
+This is a simple, skeleton application using the ZF2 MVC layer and module
+systems. This application is meant to be used as a starting place for those
+looking to get their feet wet with ZF2.
 
-## RELEASE INFORMATION
 
-*Zend Framework 2.1.4dev*
+Installation
+------------
 
-This is the fourth maintenance release for the version 2.1 series.
+Using Composer (recommended)
+----------------------------
+The recommended way to get a working copy of this project is to clone the repository
+and use `composer` to install dependencies using the `create-project` command:
 
-DD MMM YYYY
+    curl -s https://getcomposer.org/installer | php --
+    php composer.phar create-project --repository-url="http://packages.zendframework.com" zendframework/skeleton-application path/to/install
 
-### UPDATES IN 2.1.4
+Alternately, clone the repository and manually invoke `composer` using the shipped
+`composer.phar`:
 
-Please see [CHANGELOG.md](CHANGELOG.md).
+    cd my/project/dir
+    git clone git://github.com/zendframework/ZendSkeletonApplication.git
+    cd ZendSkeletonApplication
+    php composer.phar self-update
+    php composer.phar install
 
-### SYSTEM REQUIREMENTS
+(The `self-update` directive is to ensure you have an up-to-date `composer.phar`
+available.)
 
-Zend Framework 2 requires PHP 5.3.3 or later; we recommend using the
-latest PHP version whenever possible.
+Another alternative for downloading the project is to grab it via `curl`, and
+then pass it to `tar`:
 
-### INSTALLATION
+    cd my/project/dir
+    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
 
-Please see [INSTALL.md](INSTALL.md).
+You would then invoke `composer` to install dependencies per the previous
+example.
 
-### CONTRIBUTING
+Using Git submodules
+--------------------
+Alternatively, you can install using native git submodules:
 
-If you wish to contribute to Zend Framework, please read both the
-[CONTRIBUTING.md](CONTRIBUTING.md) and [README-GIT.md](README-GIT.md) file.
+    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
 
-### QUESTIONS AND FEEDBACK
-
-Online documentation can be found at http://framework.zend.com/manual.
-Questions that are not addressed in the manual should be directed to the
-appropriate mailing list:
-
-http://framework.zend.com/archives/subscribe/
-
-If you find code in this release behaving in an unexpected manner or
-contrary to its documented behavior, please create an issue in our GitHub
-issue tracker:
-
-https://github.com/zendframework/zf2/issues
-
-If you would like to be notified of new releases, you can subscribe to
-the fw-announce mailing list by sending a blank message to
-<fw-announce-subscribe@lists.zend.com>.
-
-### LICENSE
-
-The files in this archive are released under the Zend Framework license.
-You can find a copy of this license in [LICENSE.txt](LICENSE.txt).
-
-### ACKNOWLEDGEMENTS
-
-The Zend Framework team would like to thank all the [contributors](https://github.com/zendframework/zf2/contributors) to the Zend
-Framework project, our corporate sponsor, and you, the Zend Framework user.
-Please visit us sometime soon at http://framework.zend.com.
+Virtual Host
+------------
+Afterwards, set up a virtual host to point to the public/ directory of the
+project and you should be ready to go!
